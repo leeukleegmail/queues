@@ -1,5 +1,4 @@
 import pika
-import json
 
 from settings import mq_host, queue_name, json_value
 
