@@ -3,5 +3,6 @@ from settings import queue_topic, mq_host, send_client
 
 c = MQTTClient(send_client, mq_host)
 c.connect()
-c.publish(str.encode(queue_topic), b"hello")
+message = bytes(str("hello"), 'utf-8')
+c.publish(str.encode(queue_topic), message)
 c.disconnect()
